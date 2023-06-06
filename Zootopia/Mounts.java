@@ -1,24 +1,16 @@
+package Zootopia;
 import java.util.*;
 
-public class Pets 
+public class Mounts extends Program 
 {
-    public Pets(Object data) 
+    public Mounts(Object data) 
     {
-        if (data.equals("Кот") ||
-            data.equals("Кошка")) 
-        {
-            new Cats(1);
-        }
-        else if (data.equals("Собака") ||
-                data.equals("Пёс")) 
-        {
-            new Dogs(1);
-        }
+        
     }
 }
-class Cats extends Pets {
+class Horses extends Mounts {
     private Map<Integer, String> names;
-    public Cats(int choi)
+    public Horses(int choi, Scanner work)
     {
         super(choi);
         this.names = new HashMap<Integer, String>();
@@ -26,9 +18,9 @@ class Cats extends Pets {
         else System.out.println(names.get(choi));
     }
 }
-class Dogs extends Pets {
+class Donkeys extends Mounts {
     private Map<Integer, String> names;
-    public Dogs(int choi)
+    public Donkeys(int choi, Scanner work)
     {
         super(choi);
         this.names = new HashMap<Integer, String>();
@@ -36,9 +28,9 @@ class Dogs extends Pets {
         else System.out.println(names.get(choi));
     }
 }
-class Hamsters extends Pets {
+class Camels extends Mounts {
     private Map<Integer, String> names;
-    public Hamsters(int choi)
+    public Camels(int choi, Scanner work)
     {
         super(choi);
         this.names = new HashMap<Integer, String>();
