@@ -1,175 +1,176 @@
 package Zootopia;
 import java.util.*;
+import java.io.Writer;
+import java.io.Reader;
+import java.io.IOException;
 
 public class Pets extends Program
 {
-    public void CatsPub(int choi, Scanner work) throws Exception
-    {
-        new Cats(choi, work);
-    }
-    public Pets(Object data, Scanner work) 
+    public Pets(Object data, Scanner work, Writer writer, Reader reader, int size) throws IOException
     {
         if (data.equals("Кот") ||
-            data.equals("Cat")) 
+            data.equals("Кошка") ||
+            data.equals("Cat"))
         {
-            new Cats(3, work);
+            new Cats(3, work, writer, reader, size);
         }
         else if (data.equals("Собака") ||
-                data.equals("Пёс")) 
+                data.equals("Пёс") ||
+                data.equals("Dog"))
         {
-            new Dogs(3, work);
+            new Dogs(3, work, writer, reader, size);
         }
         else if (data.equals("Хомяк") ||
-                data.equals("Грызун")) 
+                data.equals("Грызун") ||
+                data.equals("Hamster"))
         {
-            new Hamsters(3, work);
+            new Hamsters(3, work, writer, reader, size);
         }
     }
 }
-class Cats extends Pets 
+class Cats extends Pets
 {
-    private Map<Integer, String> names;
-    private Map<Integer, String> cmds;
-    Cats(int choi, Scanner work)
+    Cats(int choi, Scanner work, Writer writer, Reader reader, int size) throws IOException
     {
-        super(choi, work);
-        this.names = new HashMap<Integer, String>();
+        super(choi, work, writer, reader, size);
         if (choi == 1) 
         {
-            if (names.size() == 0) 
+            if (size == 0) 
             {
                 System.out.println("Тут пока никого нет!\n");
             }
             else 
             {
-                System.out.println(names.values() + "\n");
+                System.out.println(reader + "\n");
             }
         }
         if (choi == 2) 
         {
-            if (names.size() == 0) 
+            if (size == 0) 
             {
                 System.out.println("Тут пока некого обучать!");
             }
             else 
             {
-                int key = names.size();
-                if (names.size()>1) 
+                long key = size;
+                if (size>0) 
                 {
                     System.out.println("Пожалуйста, введите номер, под которым записан ваш питомец в списке: ");
                     key = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
                 String mycmd = work.nextLine();
-                cmds.put(key, mycmd);
+                writer.write(" " + mycmd);
+                writer.write("\n");
+                writer.flush();
             }
         }
         if (choi == 3)
         {
             System.out.println("Как зовут вашего питомца?\n");
             String name = work.nextLine();
-            names.put(names.size(), name);
-            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + names.size() + "\n");
+            writer.write("\n");
+            writer.write(size);
+            writer.write(" " + name);
+            writer.flush();
+            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
     }
-//     public void CatsPub(int choi, Scanner work) throws Exception
-//     {
-//         new Cats(choi, work);
-//         // Method m = Cats.class.getDeclaredMethod("Cats");
-//         // m.setAccessible(true);
-//         // m.invoke(newcat);
-//     }
 }
 class Dogs extends Pets {
-    private Map<Integer, String> names;
-    private Map<Integer, String> cmds;
-    Dogs(int choi, Scanner work)
+    Dogs(int choi, Scanner work, Writer writer, Reader reader, int size) throws IOException
     {
-        super(choi, work);
-        this.names = new HashMap<Integer, String>();
+        super(choi, work, writer, reader, size);
         if (choi == 1) 
         {
-            if (names.size() == 0) 
+            if (size == 0) 
             {
-                System.out.println("Тут пока никого нет!");
+                System.out.println("Тут пока никого нет!\n");
             }
             else 
             {
-                System.out.println(names.values() + "\n");
+                System.out.println(reader.read() + "\n");
             }
         }
         if (choi == 2) 
         {
-            if (names.size() == 0) 
+            if (size == 0) 
             {
                 System.out.println("Тут пока некого обучать!");
             }
             else 
             {
-                int key = names.size();
-                if (names.size()>1) 
+                long key = size;
+                if (size>1) 
                 {
                     System.out.println("Пожалуйста, введите номер, под которым записан ваш питомец в списке: ");
                     key = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
                 String mycmd = work.nextLine();
-                cmds.put(key, mycmd);
+                writer.write(" " + mycmd);
+                writer.write("\n");
+                writer.flush();
             }
         }
         if (choi == 3)
         {
             System.out.println("Как зовут вашего питомца?\n");
             String name = work.nextLine();
-            names.put(names.size(), name);
-            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + names.size() + "\n");
+            writer.write("\n");
+            writer.write(size);
+            writer.write(" " + name);
+            writer.flush();
+            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
     }
 }
 class Hamsters extends Pets 
 {
-    private Map<Integer, String> names;
-    private Map<Integer, String> cmds;
-    Hamsters(int choi, Scanner work)
+    Hamsters(int choi, Scanner work, Writer writer, Reader reader, int size) throws IOException
     {
-        super(choi, work);
-        this.names = new HashMap<Integer, String>();
+        super(choi, work, writer, reader, size);
         if (choi == 1) 
         {
-            if (names.size() == 0) 
+            if (size == 0) 
             {
-                System.out.println("Тут пока никого нет!");
+                System.out.println("Тут пока никого нет!\n");
             }
             else 
             {
-                System.out.println(names.values() + "\n");
+                System.out.println(reader + "\n");
             }
         }
         if (choi == 2) 
         {
-            if (names.size() == 0) 
+            if (size == 0) 
             {
                 System.out.println("Тут пока некого обучать!");
             }
             else 
             {
-                int key = names.size();
-                if (names.size()>1) 
+                long key = size;
+                if (size>1) 
                 {
                     System.out.println("Пожалуйста, введите номер, под которым записан ваш питомец в списке: ");
                     key = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
                 String mycmd = work.nextLine();
-                cmds.put(key, mycmd);
+                writer.write(" " + mycmd);
+                writer.write("\n");
+                writer.flush();
             }
         }
         if (choi == 3)
         {
             System.out.println("Как зовут вашего питомца?\n");
             String name = work.nextLine();
-            names.put(names.size(), name);
-            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + names.size() + "\n");
+            writer.write("\n");
+            writer.write(size);
+            writer.write(" " + name);
+            writer.flush();
+            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
     }
 }
