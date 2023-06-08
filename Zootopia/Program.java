@@ -60,49 +60,39 @@ public class Program
                 }
                 else if (view == 2) 
                 {
-                    new Mounts(view);
+                    System.out.println("\n(1) Лошади\n(2) Ослы\n(3) Верблюды\n(0) Выйти\n");
+                    int pet = work.nextInt();
+                    if (pet == 1) 
+                    {
+                        new Horses(1);
+                    }
+                    else if (pet == 2) 
+                    {
+                        new Donkeys(1);
+                    }
+                    else if (pet == 3) 
+                    {
+                        new Camels(1);
+                    }
                 }
                 
             }
             else if (menu == 2) 
             {
-                System.out.println("Какое животное вы хотите обучить?\n(1) Домашние \n(2) Вьючные \n(0) Выйти");
-                int choi = work.nextInt();
-                if (choi == 1) 
+                System.out.println("Какое домашнее животное вы хотите обучить? \n(1) Кошку\n(2) Собаку\n(3) Хомяка\n(0) Выйти\n");
+                int pet = work.nextInt();
+                if (pet == 1) 
                 {
-                    System.out.println("\n(1) Кошки\n(2) Собаки\n(3) Хомяки\n(0) Выйти\n");
-                    int pet = work.nextInt();
-                    if (pet == 1) 
-                    {
-                        new Cats(2, work, size);
-                    }
-                    else if (pet == 2) 
-                    {
-                        new Dogs(2, work, size);
-                    }
-                    else if (pet == 3) 
-                    {
-                        new Hamsters(2, work, size);
-                    }
+                    new Cats(2, work, size);
                 }
-                else 
+                else if (pet == 2) 
                 {
-                    System.out.println("\n(1) Лошади\n(2) Ослы\n(3) Верблюды\n(0) Выйти\n");
-                    int pet = work.nextInt();
-                    if (pet == 1) 
-                    {
-                        new Horses(2, work);
-                    }
-                    else if (pet == 2) 
-                    {
-                        new Donkeys(2, work);
-                    }
-                    else if (pet == 3) 
-                    {
-                        new Camels(2, work);
-                    }
+                    new Dogs(2, work, size);
                 }
-
+                else if (pet == 3) 
+                {
+                    new Hamsters(2, work, size);
+                }
             }
             else if (menu == 3) 
             {
@@ -110,7 +100,6 @@ public class Program
                 work.nextLine();
                 String animal = work.nextLine();
                 new Pets(animal, work, size);
-                // work.close();
             }
             else if (menu == 0) 
             {

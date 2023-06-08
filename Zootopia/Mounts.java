@@ -10,31 +10,67 @@ public class Mounts extends Program
 }
 class Horses extends Mounts {
     private Map<Integer, String> names;
-    public Horses(int choi, Scanner work)
+    Horses(int choi)
     {
         super(choi);
         this.names = new HashMap<Integer, String>();
-        if (choi>names.size()) { System.out.println("Ошибка!"); }
-        else System.out.println(names.get(choi));
+        names.put(1, "Хомяк,'Ко мне', 'Лежать', 'Дай лапу', 09.11.2016");
+        names.put(2, "Носик, 'Лежать', 15.12.2020");
+        names.put(3, "Махно, 'не знает', 05.10.2022");
+        if (choi == 1) 
+        {
+            if (names.size() == 0) 
+            {
+                System.out.println("Тут пока никого нет!");
+            }
+            else 
+            {
+                System.out.println(names.values() + "\n");
+            }
+        }
     }
 }
 class Donkeys extends Mounts {
     private Map<Integer, String> names;
-    public Donkeys(int choi, Scanner work)
+    Donkeys(int choi)
     {
         super(choi);
         this.names = new HashMap<Integer, String>();
-        if (choi>names.size()) { System.out.println("Ошибка!"); }
-        else System.out.println(names.get(choi));
+        names.put(1, "Кружок, 'не знает', 12.01.2019");
+        names.put(2, "Жора, 'Стоять', 01.06.2014");
+        names.put(3, "Сэнди, 'Ко мне', 'Стоять', 13.01.2009");
+        if (choi == 1) 
+        {
+            if (names.size() == 0) 
+            {
+                System.out.println("Тут пока никого нет!");
+            }
+            else 
+            {
+                System.out.println(names.values() + "\n");
+            }
+        }
     }
 }
 class Camels extends Mounts {
     private Map<Integer, String> names;
-    public Camels(int choi, Scanner work)
+    Camels(int choi)
     {
         super(choi);
         this.names = new HashMap<Integer, String>();
-        if (choi>names.size()) { System.out.println("Ошибка!"); }
-        else System.out.println(names.get(choi));
+        names.put(1, "Том, 'Лежать', 'Стоять', 15.12.2000");
+        names.put(2, "Ёжик, 'Ко мне', 'Лежать', 'Стоять', 09.11.1993");
+        names.put(3, "Чёрный, 'Ко мне', 'Лежать', 'Стоять', 31.04.2014");
+        if (choi == 1) 
+        {
+            if (names.size() == 0) 
+            {
+                System.out.println("Тут пока никого нет!");
+            }
+            else 
+            {
+                System.out.println(names.values() + "\n");
+            }
+        }
     }
 }
