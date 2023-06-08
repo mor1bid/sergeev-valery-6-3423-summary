@@ -56,22 +56,22 @@ class Cats extends Pets
         }
         if (choi == 2) 
         {
-            if (size == -1) 
+            if (size == 0) 
             {
                 System.out.println("Тут пока некого обучать!");
             }
             else 
             {
-                long key = size;
-                if (size>0) 
+                if (size > 1) 
                 {
                     System.out.println("Пожалуйста, введите номер, под которым записан ваш питомец в списке: ");
-                    key = work.nextInt();
+                    size = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
                 work.nextLine();
                 String mycmd = work.nextLine();
-                nib.write(" " + mycmd);
+                nib.write(size);
+                nib.write(". " + mycmd);
                 nib.write("\n");
                 nib.flush();
             }
@@ -82,7 +82,7 @@ class Cats extends Pets
             String name = work.nextLine();
             nib.write("\n");
             nib.write(size);
-            nib.write(" " + name);
+            nib.write(". " + name);
             nib.flush();
             System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
@@ -98,7 +98,7 @@ class Dogs extends Pets {
         BufferedReader bread = new BufferedReader(new InputStreamReader(new FileInputStream("Zootopia/zoolists/dogs.txt"), "UTF-8"));
         if (choi == 1) 
         {
-            if (size == -1) 
+            if (size == 0) 
             {
                 System.out.println("Тут пока никого нет!\n");
             }
@@ -119,16 +119,16 @@ class Dogs extends Pets {
             }
             else 
             {
-                long key = size;
-                if (size>1) 
+                if (size > 1) 
                 {
                     System.out.println("Пожалуйста, введите номер, под которым записан ваш питомец в списке: ");
-                    key = work.nextInt();
+                    size = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
                 work.nextLine();
                 String mycmd = work.nextLine();
-                nib.write(" " + mycmd);
+                nib.write(size);
+                nib.write(". " + mycmd);
                 nib.write("\n");
                 nib.flush();
             }
@@ -139,7 +139,7 @@ class Dogs extends Pets {
             String name = work.nextLine();
             nib.write("\n");
             nib.write(size);
-            nib.write(" " + name);
+            nib.write(". " + name);
             nib.flush();
             System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
@@ -156,7 +156,7 @@ class Hamsters extends Pets
         BufferedReader bread = new BufferedReader(new InputStreamReader(new FileInputStream("Zootopia/zoolists/hamsters.txt"), "UTF-8"));
         if (choi == 1) 
         {
-            if (size == -1)
+            if (size == 0)
             {
                 System.out.println("Тут пока никого нет!\n");
             }
@@ -177,16 +177,16 @@ class Hamsters extends Pets
             }
             else 
             {
-                long key = size;
-                if (size>1) 
+                if (size > 1) 
                 {
                     System.out.println("Пожалуйста, введите номер, под которым записан ваш питомец в списке: ");
-                    key = work.nextInt();
+                    size = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
                 work.nextLine();
                 String mycmd = work.nextLine();
-                nib.write(" " + mycmd);
+                nib.write(size);
+                nib.write(". " + mycmd);
                 nib.write("\n");
                 nib.flush();
             }
@@ -197,7 +197,7 @@ class Hamsters extends Pets
             String name = work.nextLine();
             nib.write("\n");
             nib.write(size);
-            nib.write(" " + name);
+            nib.write(". " + name);
             nib.flush();
             System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }

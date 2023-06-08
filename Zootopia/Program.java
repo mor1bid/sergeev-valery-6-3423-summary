@@ -27,10 +27,10 @@ public class Program
         File hamlist = new File("Zootopia/zoolists/hamsters.txt");
         hamlist.createNewFile();
         long fize = Files.size(Paths.get("Zootopia/zoolists/cats.txt"));
-        int size = (int) (long) fize;
-        if (size < 1) 
+        int size = 0;
+        if (size > 0) 
         {
-            size = 0;
+            size = (int) (long) fize;
         }
         System.out.println("Здравствуйте!\n");
         while(true) 
@@ -100,6 +100,7 @@ public class Program
                 work.nextLine();
                 String animal = work.nextLine();
                 new Pets(animal, work, size);
+                size++;
             }
             else if (menu == 0) 
             {
