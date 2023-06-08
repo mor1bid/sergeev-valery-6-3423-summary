@@ -2,37 +2,43 @@ package Zootopia;
 import java.util.*;
 import java.io.Writer;
 import java.io.Reader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.InputStreamReader;
 import java.io.IOException;
 
 public class Pets extends Program
 {
-    public Pets(Object data, Scanner work, Writer writer, Reader reader, int size) throws IOException
+    public Pets(Object data, Scanner work, int size) throws IOException
     {
         if (data.equals("Кот") ||
             data.equals("Кошка") ||
             data.equals("Cat"))
         {
-            new Cats(3, work, writer, reader, size);
+            new Cats(3, work, size);
         }
         else if (data.equals("Собака") ||
                 data.equals("Пёс") ||
                 data.equals("Dog"))
         {
-            new Dogs(3, work, writer, reader, size);
+            new Dogs(3, work, size);
         }
         else if (data.equals("Хомяк") ||
                 data.equals("Грызун") ||
                 data.equals("Hamster"))
         {
-            new Hamsters(3, work, writer, reader, size);
+            new Hamsters(3, work, size);
         }
     }
 }
 class Cats extends Pets
 {
-    Cats(int choi, Scanner work, Writer writer, Reader reader, int size) throws IOException
+    Cats(int choi, Scanner work, int size) throws IOException
     {
-        super(choi, work, writer, reader, size);
+        super(choi, work, size);
+        Writer writer = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/cats.txt", true), "UTF-8");
+        Reader reader = new InputStreamReader(new FileInputStream("Zootopia/zoolists/cats.txt"), "UTF-8");
         if (choi == 1) 
         {
             if (size == 0) 
@@ -78,9 +84,11 @@ class Cats extends Pets
     }
 }
 class Dogs extends Pets {
-    Dogs(int choi, Scanner work, Writer writer, Reader reader, int size) throws IOException
+    Dogs(int choi, Scanner work, int size) throws IOException
     {
-        super(choi, work, writer, reader, size);
+        super(choi, work, size);
+        Writer writer = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/dogs.txt", true), "UTF-8");
+        Reader reader = new InputStreamReader(new FileInputStream("Zootopia/zoolists/dogs.txt"), "UTF-8");
         if (choi == 1) 
         {
             if (size == 0) 
@@ -127,9 +135,11 @@ class Dogs extends Pets {
 }
 class Hamsters extends Pets 
 {
-    Hamsters(int choi, Scanner work, Writer writer, Reader reader, int size) throws IOException
+    Hamsters(int choi, Scanner work, int size) throws IOException
     {
-        super(choi, work, writer, reader, size);
+        super(choi, work, size);
+        Writer writer = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/hamsters.txt", true), "UTF-8");
+        Reader reader = new InputStreamReader(new FileInputStream("Zootopia/zoolists/hamsters.txt"), "UTF-8");
         if (choi == 1) 
         {
             if (size == 0) 

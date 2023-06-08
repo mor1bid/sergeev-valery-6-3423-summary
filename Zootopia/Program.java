@@ -1,12 +1,6 @@
 package Zootopia;
 import java.util.*;
 import java.io.File;
-import java.io.Writer;
-import java.io.Reader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.InputStreamReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -22,9 +16,7 @@ public class Program
         File doglist = new File("Zootopia/zoolists/dogs.txt");
         doglist.createNewFile();
         File hamlist = new File("Zootopia/zoolists/hamsters.txt");
-        doglist.createNewFile();
-        Writer noter = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/", true), "UTF-8");
-        Reader seeker = new InputStreamReader(new FileInputStream("Zootopia/zoolists/"), "UTF-8");
+        hamlist.createNewFile();
         long fize = Files.size(Paths.get("Zootopia/zoolists/pets.txt"));
         int size = (int) (long) fize;
         if (size < 1) 
@@ -46,15 +38,15 @@ public class Program
                     int pet = work.nextInt();
                     if (pet == 1) 
                     {
-                        new Cats(1, work, noter, seeker, size);
+                        new Cats(1, work, size);
                     }
                     else if (pet == 2) 
                     {
-                        new Dogs(1, work, noter, seeker, size);
+                        new Dogs(1, work, size);
                     }
                     else if (pet == 3) 
                     {
-                        new Hamsters(1, work, noter, seeker, size);
+                        new Hamsters(1, work, size);
                     }
                 }
                 else if (view == 2) 
@@ -73,15 +65,15 @@ public class Program
                     int pet = work.nextInt();
                     if (pet == 1) 
                     {
-                        new Cats(2, work, noter, seeker, size);
+                        new Cats(2, work, size);
                     }
                     else if (pet == 2) 
                     {
-                        new Dogs(2, work, noter, seeker, size);
+                        new Dogs(2, work, size);
                     }
                     else if (pet == 3) 
                     {
-                        new Hamsters(2, work, noter, seeker, size);
+                        new Hamsters(2, work, size);
                     }
                 }
                 else 
@@ -108,7 +100,7 @@ public class Program
                 System.out.println("Введите название домашнего животного, которого желаете завести:");
                 work.nextLine();
                 String animal = work.nextLine();
-                new Pets(animal, work, noter, seeker, size);
+                new Pets(animal, work, size);
                 // work.close();
             }
             else if (menu == 0) 
