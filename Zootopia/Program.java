@@ -5,6 +5,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+class Hourglass 
+{
+    void add() 
+    {
+        int cow = 0;
+        cow++;
+    }
+}
+
 public class Program
 {
     public static void main(String[] args) throws IOException
@@ -17,7 +26,7 @@ public class Program
         doglist.createNewFile();
         File hamlist = new File("Zootopia/zoolists/hamsters.txt");
         hamlist.createNewFile();
-        long fize = Files.size(Paths.get("Zootopia/zoolists/pets.txt"));
+        long fize = Files.size(Paths.get("Zootopia/zoolists/cats.txt"));
         int size = (int) (long) fize;
         if (size < 1) 
         {

@@ -1,7 +1,7 @@
 package Zootopia;
 import java.util.*;
 import java.io.Writer;
-import java.io.Reader;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
@@ -37,22 +37,26 @@ class Cats extends Pets
     Cats(int choi, Scanner work, int size) throws IOException
     {
         super(choi, work, size);
-        Writer writer = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/cats.txt", true), "UTF-8");
-        Reader reader = new InputStreamReader(new FileInputStream("Zootopia/zoolists/cats.txt"), "UTF-8");
+        Writer nib = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/cats.txt", true), "UTF-8");
+        BufferedReader bread = new BufferedReader(new InputStreamReader(new FileInputStream("Zootopia/zoolists/cats.txt"), "UTF-8"));
         if (choi == 1) 
         {
             if (size == 0) 
             {
                 System.out.println("Тут пока никого нет!\n");
             }
-            else 
+            else
             {
-                System.out.println(reader + "\n");
+                String line;
+                while((line = bread.readLine()) != null) 
+                {
+                    System.out.println(line);
+                }
             }
         }
         if (choi == 2) 
         {
-            if (size == 0) 
+            if (size == -1) 
             {
                 System.out.println("Тут пока некого обучать!");
             }
@@ -65,39 +69,46 @@ class Cats extends Pets
                     key = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
+                work.nextLine();
                 String mycmd = work.nextLine();
-                writer.write(" " + mycmd);
-                writer.write("\n");
-                writer.flush();
+                nib.write(" " + mycmd);
+                nib.write("\n");
+                nib.flush();
             }
         }
         if (choi == 3)
         {
             System.out.println("Как зовут вашего питомца?\n");
             String name = work.nextLine();
-            writer.write("\n");
-            writer.write(size);
-            writer.write(" " + name);
-            writer.flush();
+            nib.write("\n");
+            nib.write(size);
+            nib.write(" " + name);
+            nib.flush();
             System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
+        bread.close();
+        nib.close();
     }
 }
 class Dogs extends Pets {
     Dogs(int choi, Scanner work, int size) throws IOException
     {
         super(choi, work, size);
-        Writer writer = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/dogs.txt", true), "UTF-8");
-        Reader reader = new InputStreamReader(new FileInputStream("Zootopia/zoolists/dogs.txt"), "UTF-8");
+        Writer nib = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/dogs.txt", true), "UTF-8");
+        BufferedReader bread = new BufferedReader(new InputStreamReader(new FileInputStream("Zootopia/zoolists/dogs.txt"), "UTF-8"));
         if (choi == 1) 
         {
-            if (size == 0) 
+            if (size == -1) 
             {
                 System.out.println("Тут пока никого нет!\n");
             }
             else 
             {
-                System.out.println(reader.read() + "\n");
+                String line;
+                while((line = bread.readLine()) != null) 
+                {
+                    System.out.println(line);
+                }
             }
         }
         if (choi == 2) 
@@ -115,22 +126,25 @@ class Dogs extends Pets {
                     key = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
+                work.nextLine();
                 String mycmd = work.nextLine();
-                writer.write(" " + mycmd);
-                writer.write("\n");
-                writer.flush();
+                nib.write(" " + mycmd);
+                nib.write("\n");
+                nib.flush();
             }
         }
         if (choi == 3)
         {
             System.out.println("Как зовут вашего питомца?\n");
             String name = work.nextLine();
-            writer.write("\n");
-            writer.write(size);
-            writer.write(" " + name);
-            writer.flush();
+            nib.write("\n");
+            nib.write(size);
+            nib.write(" " + name);
+            nib.flush();
             System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
+        bread.close();
+        nib.close();
     }
 }
 class Hamsters extends Pets 
@@ -138,17 +152,21 @@ class Hamsters extends Pets
     Hamsters(int choi, Scanner work, int size) throws IOException
     {
         super(choi, work, size);
-        Writer writer = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/hamsters.txt", true), "UTF-8");
-        Reader reader = new InputStreamReader(new FileInputStream("Zootopia/zoolists/hamsters.txt"), "UTF-8");
+        Writer nib = new OutputStreamWriter(new FileOutputStream("Zootopia/zoolists/hamsters.txt", true), "UTF-8");
+        BufferedReader bread = new BufferedReader(new InputStreamReader(new FileInputStream("Zootopia/zoolists/hamsters.txt"), "UTF-8"));
         if (choi == 1) 
         {
-            if (size == 0) 
+            if (size == -1)
             {
                 System.out.println("Тут пока никого нет!\n");
             }
             else 
             {
-                System.out.println(reader + "\n");
+                String line;
+                while((line = bread.readLine()) != null) 
+                {
+                    System.out.println(line);
+                }
             }
         }
         if (choi == 2) 
@@ -166,22 +184,25 @@ class Hamsters extends Pets
                     key = work.nextInt();
                 }
                 System.out.println("Введите одну или несколько (через пробел) команд, которым вы желаете обучить ваше животное: ");
+                work.nextLine();
                 String mycmd = work.nextLine();
-                writer.write(" " + mycmd);
-                writer.write("\n");
-                writer.flush();
+                nib.write(" " + mycmd);
+                nib.write("\n");
+                nib.flush();
             }
         }
         if (choi == 3)
         {
             System.out.println("Как зовут вашего питомца?\n");
             String name = work.nextLine();
-            writer.write("\n");
-            writer.write(size);
-            writer.write(" " + name);
-            writer.flush();
+            nib.write("\n");
+            nib.write(size);
+            nib.write(" " + name);
+            nib.flush();
             System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
+        bread.close();
+        nib.close();
     }
 }
 
