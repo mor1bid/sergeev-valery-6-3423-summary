@@ -52,6 +52,7 @@ class Cats extends Pets
                 {
                     System.out.println(line);
                 }
+                System.out.println();
             }
         }
         if (choi == 2) 
@@ -74,6 +75,7 @@ class Cats extends Pets
                 nib.write(". " + mycmd);
                 nib.write("\n");
                 nib.flush();
+                System.out.println("\nВаш питомец был обучен новой команде! Можете проверить это в нужном списке животных.\n");
             }
         }
         if (choi == 3)
@@ -84,7 +86,6 @@ class Cats extends Pets
             nib.write(size);
             nib.write(". " + name);
             nib.flush();
-            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
         bread.close();
         nib.close();
@@ -131,6 +132,7 @@ class Dogs extends Pets {
                 nib.write(". " + mycmd);
                 nib.write("\n");
                 nib.flush();
+                System.out.println("\nВаш питомец был обучен новой команде! Можете проверить это в нужном списке животных.\n");
             }
         }
         if (choi == 3)
@@ -141,7 +143,6 @@ class Dogs extends Pets {
             nib.write(size);
             nib.write(". " + name);
             nib.flush();
-            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
         bread.close();
         nib.close();
@@ -189,6 +190,7 @@ class Hamsters extends Pets
                 nib.write(". " + mycmd);
                 nib.write("\n");
                 nib.flush();
+                System.out.println("\nВаш питомец был обучен новой команде! Можете проверить это в нужном списке животных.\n");
             }
         }
         if (choi == 3)
@@ -199,7 +201,6 @@ class Hamsters extends Pets
             nib.write(size);
             nib.write(". " + name);
             nib.flush();
-            System.out.println("\nВаш питомец был добавлен в список домашних животных! \nЕго номер в списке: " + size + "\n");
         }
         bread.close();
         nib.close();

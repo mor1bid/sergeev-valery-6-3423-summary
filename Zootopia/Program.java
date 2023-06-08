@@ -101,6 +101,7 @@ public class Program
                 String animal = work.nextLine();
                 new Pets(animal, work, size);
                 size++;
+                System.out.println("Ваш питомец был добавлен в список домашних животных!\n Его номер в списке: " + size);
             }
             else if (menu == 0) 
             {
